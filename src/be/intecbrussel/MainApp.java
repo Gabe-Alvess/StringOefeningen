@@ -70,15 +70,18 @@ public class MainApp {
         // 5. Maak een programma dat controleert of een String een geldige email address is.
         // (email address moet minstens een @ en een . bevatten, de . moet na de @ komen).
 
-        String email = "@.";
-
-        boolean containsAt = email.contains("@");
-        boolean containsDot = email.contains(".");
+        String email = "bob@pm.com";
 
         int atPosition = email.indexOf("@");
         int dotPosition = email.indexOf(".");
 
-        if (containsAt && containsDot && atPosition < dotPosition) {
+        boolean containsAt = email.contains("@");
+        boolean containsDot = email.contains(".");
+        boolean atSmallerThanDot = atPosition < dotPosition;
+        boolean minAtPosition = atPosition >= 3;
+        boolean minDotPosition = dotPosition >= 6;
+
+        if (containsAt && containsDot && atSmallerThanDot && minAtPosition && minDotPosition) {
             System.out.println(email + " ->" + " Is een geldige email address!");
         } else {
             System.out.println(email + " ->" + " Is een ongeldige email address!");
